@@ -1,10 +1,10 @@
 <template>
   <div>
-    <NButton type="success">12312</NButton>
+    <div>首页</div>
   </div>
 </template>
 <script lang="ts" setup>
-import { NButton } from "naive-ui";
+
 </script>
 <style lang="scss">
 </style>
