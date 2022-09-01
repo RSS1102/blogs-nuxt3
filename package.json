@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@css-render/vue3-ssr": "^0.15.11",
+    "@vicons/ionicons5": "^0.12.0",
     "naive-ui": "^2.33.1",
     "sass": "^1.54.5"
   }

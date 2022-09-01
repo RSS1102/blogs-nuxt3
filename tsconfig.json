@@ -7,5 +7,15 @@
     //   "@vueuse/nuxt",
     //   "@pinia/nuxt"
     // ]
-  }
+  },
+  // "include": [
+  //   "page/**/*.ts",
+  //   "page/**/*.d.ts",
+  //   "page/**/*.tsx",
+  //   "page/**/*.vue",
+  //   "components/**/*.ts",
+  //   "components/**/*.d.ts",
+  //   "components/**/*.tsx",
+  //   "components/**/*.vue"
+  // ]
 }
