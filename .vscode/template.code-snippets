@@ -1,0 +1,20 @@
+{
+	"Print to console": {
+		"prefix": "nuxt",
+		"body": [
+			"<template>",
+			"  <div></div>",
+			"</template>",
+			"",
+			"<script lang=\"ts\" setup>",
+			"",
+			"</script>",
+			"",
+			"<style lang=\"scss\" scoped>",
+			"",
+			"</style>",
+			""
+		],
+		"description": "A nuxt file template"
+	},
+}

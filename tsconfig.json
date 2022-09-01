@@ -3,9 +3,9 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "strict": true,
-    "types": [
-      "@vueuse/nuxt",
-      "@pinia/nuxt"
-    ]
+    // "types": [
+    //   "@vueuse/nuxt",
+    //   "@pinia/nuxt"
+    // ]
   }
 }
