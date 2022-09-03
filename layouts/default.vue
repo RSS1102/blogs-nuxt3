@@ -1,6 +1,8 @@
 <template>
   <div>
-      <TheHeader></TheHeader>
-    <slot/>
+    <LayoutsHeader></LayoutsHeader>
+    <slot></slot>
   </div>
 </template>
+<style scoped>
+</style>

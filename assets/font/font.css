@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "fontone";
+    src: url("../../assets/font/font1.ttf");
+    img-weight: normal;
+    img-style: normal;
+}
+
+@font-face {
+    font-family: "fontwo";
+    src: url("../../assets/font/font2.TTF");
+    img-weight: normal;
+    img-style: normal;
+}
+
+@font-face {
+    font-family: "fonthree";
+    src: url("../../assets/font/font3.TTF");
+    img-weight: normal;
+    img-style: normal;
+}
