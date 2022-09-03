@@ -35,7 +35,7 @@ const menuOptions: MenuOption[] = [
   },
   {
     label: "待定",
-    key: "/product",
+    key: "/dist",
     icon: renderIcon(MedalIcon),
     disabled: true,
   },
