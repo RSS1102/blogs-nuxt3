@@ -27,8 +27,7 @@ import { NLayout, NLayoutSider, NScrollbar, NEllipsis, NMenu, MenuOption } from 
 
 interface dataItemType {
     id: number,
-    name: string,
-    isShow: boolean
+    name: string
 }
 interface dataType {
     id: number,
@@ -41,32 +40,34 @@ const menuItem: Array<dataType> = [
     { id: 1, name: "导航栏导航栏导航栏导航栏1", children: null },
     {
         id: 2, name: "导航栏2", children: [
-            { id: 21, name: "内容1", isShow: false },
-            { id: 22, name: "内容2", isShow: false },
-            { id: 23, name: "内容3", isShow: false },
-            { id: 24, name: "内容4", isShow: false },
-            { id: 25, name: "内容1", isShow: false },
-            { id: 26, name: "内容2", isShow: false },
-            { id: 27, name: "内容3", isShow: true },
-            { id: 28, name: "内容4", isShow: true },
+            { id: 21, name: "内容1", },
+            { id: 22, name: "内容2", },
+            { id: 23, name: "内容3", },
+            { id: 24, name: "内容4", },
+            { id: 25, name: "内容1", },
+            { id: 26, name: "内容2", },
+            { id: 27, name: "内容3", },
+            { id: 28, name: "内容4", },
         ]
     },
     {
         id: 3, name: "导航栏3", children: [
-            { id: 21, name: "内容1", isShow: true },
-            { id: 122, name: "内容2", isShow: true },
-            { id: 123, name: "内容3", isShow: true },
-            { id: 124, name: "内容4", isShow: true },
-            { id: 125, name: "内容1", isShow: true },
-            { id: 126, name: "内容2", isShow: true },
-            { id: 127, name: "内容3", isShow: true },
-            { id: 128, name: "内容4", isShow: true },
+            { id: 21, name: "内容1", },
+            { id: 122, name: "内容2", },
+            { id: 123, name: "内容3", },
+            { id: 124, name: "内容4", },
+            { id: 125, name: "内容1", },
+            { id: 126, name: "内容2", },
+            { id: 127, name: "内容3", },
+            { id: 128, name: "内容4", },
         ]
     },
 ]
 
-
-
+/**
+ * @de 筛选导航栏
+ * @de 后端筛选isShow=true;
+ */
 menuItem.forEach(item => {
     let firstItems: MenuOption = {
         key: item.id,
@@ -81,9 +82,8 @@ menuItem.forEach(item => {
                 key: item.id,
                 label: () => h(NEllipsis, null, { default: () => item.name }),
             }
-            item.isShow ? firstItems.children?.push(secondItems) : ''
+            firstItems.children?.push(secondItems)
         }) : firstItems.disabled = true
-
 })
 const handleValue = (key: string, item: MenuOption) => {
     console.log(key)
