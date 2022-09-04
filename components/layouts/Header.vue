@@ -41,7 +41,7 @@ const menuOptions: MenuOption[] = [
   },
   {
     label: "交流",
-    key: "/product",
+    key: "/communication",
     icon: renderIcon(PaperPlaneIcon),
   },
   {
