@@ -3,19 +3,6 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "strict": true,
-    // "types": [
-    //   "@vueuse/nuxt",
-    //   "@pinia/nuxt"
-    // ]
+    "jsx": "preserve"
   },
-  // "include": [
-  //   "page/**/*.ts",
-  //   "page/**/*.d.ts",
-  //   "page/**/*.tsx",
-  //   "page/**/*.vue",
-  //   "components/**/*.ts",
-  //   "components/**/*.d.ts",
-  //   "components/**/*.tsx",
-  //   "components/**/*.vue"
-  // ]
 }
