@@ -4,7 +4,7 @@
             <div class="blogs-logo ">
                 RSS1102
             </div>
-            <NLayout has-sider>
+            <NLayout has-sider></NLayout>
                 <NLayoutSider :width="240">
                     <NScrollbar style="max-height: 100vh">
                         <n-menu :options="menuOptions" @update:value="handleValue" />

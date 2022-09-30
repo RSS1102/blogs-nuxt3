@@ -1,8 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --mode development",
+    "dev:pro": "nuxt dev --mode production",
+    "build": "nuxt build --mode production",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
