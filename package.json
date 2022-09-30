@@ -8,12 +8,12 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.8"
+    "nuxt": "3.0.0-rc.11"
   },
   "dependencies": {
     "@css-render/vue3-ssr": "^0.15.11",
     "@vicons/ionicons5": "^0.12.0",
-    "naive-ui": "^2.33.1",
-    "sass": "^1.54.5"
+    "naive-ui": "^2.33.3",
+    "sass": "^1.55.0"
   }
 }
