@@ -7,7 +7,13 @@
         <NLayoutSider :width="240">
           <NScrollbar style="max-height: 100vh">
             <ClientOnly>
-              <NMenu :options="blogsTree" @update:value="handleValue" />
+              <NMenu
+                :options="blogsTree"
+                :indent="10"
+                v-model:value="selectedKey"
+                @update:value="updateValue"
+                :watch-props="['defaultExpandedKeys']"
+              />
             </ClientOnly>
           </NScrollbar>
         </NLayoutSider>
@@ -24,9 +30,14 @@
 
 <script lang="ts" setup>
 import { NLayout, NLayoutSider, NScrollbar, NMenu, MenuOption } from "naive-ui";
-import { getBlogsTree } from "~~/api/blogs";
+import { getBlogsContent, getBlogsTree } from "~~/api/blogs";
 const blogsTree = ref<MenuChild[]>([]);
-// 序列化menu
+const route = useRoute();
+const selectedKey = ref<string>("");
+selectedKey.value = route.params.title as string;
+/**
+ * @de 序列化menu
+ */
 const formatterMenu = (data: BlogsTree[] | null) => {
   if (!data) return [];
   blogsTree.value = data.map((e) => {
@@ -46,14 +57,32 @@ const formatterMenu = (data: BlogsTree[] | null) => {
     return obj;
   });
 };
+
+/**
+ * @de api-getBlogsContent
+ */
+if (selectedKey.value !== "index") {
+  getBlogsContent({ title: selectedKey.value })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log("err", err);
+    });
+} else {
+  console.log("初始页面的赋值");
+}
+/**
+ * @de api-getBlogsTree
+ */
 getBlogsTree()
   .then((res) => {
     formatterMenu(res.value);
   })
   .catch((err) => {});
 
-const handleValue = (key: string, item: MenuOption) => {
-  console.log(key);
+const updateValue = async (key: string, item: MenuOption) => {
+  await navigateTo(`${"/blogs/" + key}`);
 };
 </script>
 
@@ -75,6 +104,8 @@ const handleValue = (key: string, item: MenuOption) => {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  border-bottom: 1px solid rgba(114, 114, 114, 0.5);
 }
 
 .blogs-main {
@@ -82,4 +113,7 @@ const handleValue = (key: string, item: MenuOption) => {
   width: 100%;
   border-left: 1px solid black;
 }
+// .n-menu :deep(.n-menu-item-content) {
+//   padding-left: 10px !important;
+// }
 </style>

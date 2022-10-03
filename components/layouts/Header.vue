@@ -30,7 +30,7 @@ const menuOptions: MenuOption[] = [
   },
   {
     label: "博客",
-    key: "/blogs",
+    key: "/blogs/index",
     icon: renderIcon(BookIcon),
   },
   {

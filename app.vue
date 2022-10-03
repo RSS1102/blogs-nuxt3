@@ -1,12 +1,12 @@
 <template>
   <div>
     <NuxtLayout>
-      <NuxtPage />
+      <NuxtPage :key="$route.fullPath" />
     </NuxtLayout>
   </div>
 </template>
 
-<style >
+<style>
 body {
   margin: 0;
   padding: 0;
@@ -14,4 +14,3 @@ body {
   overflow: hidden;
 }
 </style>
-  

@@ -8,3 +8,13 @@ export const getBlogsTree = async () => {
   );
   return data;
 };
+
+export const getBlogsContent = async (params: { title: string }) => {
+  const { data } = await useAsyncData<BlogsTree[]>("blogsContent", () =>
+    $fetch(ENV_VITE_URL + "blogs/getBlogsContent", {
+      method: "POST",
+      params: { ...params },
+    })
+  );
+  return data;
+};
