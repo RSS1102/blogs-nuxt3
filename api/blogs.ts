@@ -10,10 +10,9 @@ export const getBlogsTree = async () => {
 };
 
 export const getBlogsContent = async (params: { title: string }) => {
-  const { data } = await useAsyncData<BlogsTree[]>("blogsContent", () =>
+  const { data } = await useLazyAsyncData<BlogsTree[]>("blogsContent", () =>
     $fetch(ENV_VITE_URL + "blogs/getBlogsContent", {
-      method: "POST",
-      params: { ...params },
+      params,
     })
   );
   return data;
