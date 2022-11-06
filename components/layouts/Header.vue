@@ -1,7 +1,12 @@
 <template>
   <div class="head-menu">
-    <n-menu mode="horizontal" :options="menuOptions" @update:value="handleMenu" :icon-size="26"
-      :default-value="defaultValue" />
+    <n-menu
+      mode="horizontal"
+      :options="menuOptions"
+      @update:value="handleMenu"
+      :icon-size="26"
+      :default-value="defaultValue"
+    />
   </div>
 </template>
 
@@ -16,8 +21,7 @@ import {
   PlanetOutline as PlanetIcon,
 } from "@vicons/ionicons5";
 const router = useRouter();
-const route = useRoute()
-
+const route = useRoute();
 
 const renderIcon = (icon: Component) => {
   return () => h(NIcon, null, { default: () => h(icon) });
@@ -33,12 +37,7 @@ const menuOptions: MenuOption[] = [
     key: "/blogs/index",
     icon: renderIcon(BookIcon),
   },
-  {
-    label: "待定",
-    key: "/dist",
-    icon: renderIcon(MedalIcon),
-    disabled: true,
-  },
+
   {
     label: "交流",
     key: "/communication",
@@ -48,6 +47,11 @@ const menuOptions: MenuOption[] = [
     label: "生活",
     key: "/share",
     icon: renderIcon(PlanetIcon),
+  },
+  {
+    label: "关于我",
+    key: "/aboutMe",
+    icon: renderIcon(MedalIcon),
   },
 ];
 
@@ -63,7 +67,6 @@ const handleMenu = (key: string, item: MenuOption) => {
   display: flex;
   justify-content: center;
   border-bottom: 2px solid #ddd;
-  border-image: linear-gradient(0.25turn, #e66465, #9198e5, #e66465)0 0 40 0;
-
+  border-image: linear-gradient(0.25turn, #e66465, #9198e5, #e66465) 0 0 40 0;
 }
 </style>
