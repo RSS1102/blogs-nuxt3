@@ -12,7 +12,6 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from "vue";
 const props = defineProps({
   backgroudColor: { type: String, default: "rgb(78, 78, 255)" },
   width: { type: String, default: "100%" },

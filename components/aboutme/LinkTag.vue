@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from "vue";
 const props = defineProps({
   color: { type: String, default: "black" },
   lineColor: { type: String, default: "red" },

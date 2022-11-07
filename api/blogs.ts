@@ -1,5 +1,3 @@
-import { Ref } from "vue";
-
 //加载环境变量，地址
 const __ENV__ = import.meta.env;
 const ENV_VITE_URL = __ENV__.VITE_URL;
