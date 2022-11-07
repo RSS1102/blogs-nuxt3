@@ -7,13 +7,8 @@
         <NLayoutSider :width="240">
           <NScrollbar style="max-height: 100vh">
             <ClientOnly>
-              <NMenu
-                :options="blogsTree"
-                :indent="10"
-                v-model:value="selectedKey"
-                @update:value="updateValue"
-                :watch-props="['defaultExpandedKeys']"
-              />
+              <NMenu :options="blogsTree" :indent="10" v-model:value="selectedKey" @update:value="updateValue"
+                :watch-props="['defaultExpandedKeys']" />
             </ClientOnly>
           </NScrollbar>
         </NLayoutSider>
@@ -29,21 +24,25 @@
               <div class="contentInfo-info">
                 <!-- likedNum    visitedNum  createTime -->
                 <div class="contentinfo-info-item">
-                  <NIcon size="25"><HeartOutlineIcon></HeartOutlineIcon></NIcon>
+                  <NIcon size="25">
+                    <HeartOutlineIcon></HeartOutlineIcon>
+                  </NIcon>
                   <i class="num">{{ contentInfo?.likedNum }}</i>
                 </div>
                 <div class="contentinfo-info-item">
-                  <NIcon size="25"><EyeOutlineIcon></EyeOutlineIcon></NIcon>
+                  <NIcon size="25">
+                    <EyeOutlineIcon></EyeOutlineIcon>
+                  </NIcon>
                   <i class="num"> {{ contentInfo?.visitedNum }}</i>
                 </div>
                 <div class="contentinfo-info-item">
-                  <NIcon size="25"
-                    ><SchoolOutlineIcon></SchoolOutlineIcon
-                  ></NIcon>
+                  <NIcon size="25">
+                    <SchoolOutlineIcon></SchoolOutlineIcon>
+                  </NIcon>
                   <i class="num">{{
-                    contentInfo?.createTime
-                      ? useFormatterTimeAgo(contentInfo!.createTime).value
-                      : ""
+                      contentInfo?.createTime
+                        ? useFormatterTimeAgo(contentInfo!.createTime).value
+                        : ""
                   }}</i>
                 </div>
               </div>
@@ -53,12 +52,14 @@
               {{ contentInfo?.content }}
             </div>
             <div :class="['contentinfo-info-item', 'contentinfo-info-footer']">
-              <NIcon size="25"><RocketOutlineIcon></RocketOutlineIcon></NIcon>
+              <NIcon size="25">
+                <RocketOutlineIcon></RocketOutlineIcon>
+              </NIcon>
               <i class="num">
                 {{
-                  contentInfo?.updateTime
-                    ? useFormatterTimeAgo(contentInfo!.createTime).value
-                    : ""
+    contentInfo?.updateTime
+      ? useFormatterTimeAgo(contentInfo!.createTime).value
+      : ""
                 }}
               </i>
             </div>
@@ -127,7 +128,7 @@ getBlogsTree()
   .then((res) => {
     formatterMenu(res.value!.data);
   })
-  .catch((err) => {});
+  .catch((err) => { });
 
 /**
  * @desc api-getBlogsConten
@@ -162,17 +163,10 @@ const goIndex = async () => {
 .side-menu {
   width: 240px;
 }
-.blogs-logo {
-  padding: 20px 0 10px 0;
-  font-size: 28px;
-  text-align: center;
-  font-family: "fontone";
-  font-weight: bolder;
-  background: linear-gradient(90deg, #261b8c 5%, #9f3a1c 80%, #d64e24 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 
+.blogs-logo {
+  @extend .logo;
+  
   border-bottom: 1px solid rgba(114, 114, 114, 0.5);
   cursor: pointer;
 }
@@ -182,34 +176,41 @@ const goIndex = async () => {
   width: 100%;
   border-left: 1px solid black;
 }
+
 // contentinfo
 .contentinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .contentinfo-title {
   font-size: 26px;
   font-weight: bolder;
   margin: 14px 0;
 }
+
 .contentInfo-info {
   display: flex;
 }
+
 .contentinfo-info-item {
   display: flex;
   align-items: center;
   margin: 0 10px;
+
   .num {
     font-size: 16px;
     margin-left: 2px;
   }
 }
+
 .contentinfo-info-footer {
   position: fixed;
   right: 50px;
   bottom: 50px;
 }
+
 .welcome {
   text-align: center;
   margin-top: 30vh;

@@ -50,7 +50,7 @@ const menuOptions: MenuOption[] = [
   },
   {
     label: "关于我",
-    key: "/aboutMe",
+    key: "/aboutme",
     icon: renderIcon(MedalIcon),
   },
 ];

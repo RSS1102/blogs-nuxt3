@@ -1,1 +1,13 @@
 @use "../font/font.css";
+.logo{
+    padding: 20px 0 10px 0;
+    font-size: 28px;
+    text-align: center;
+    font-family: "fontone";
+    font-weight: bolder;
+    background: linear-gradient(90deg, #261b8c 5%, #9f3a1c 80%, #d64e24 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+}

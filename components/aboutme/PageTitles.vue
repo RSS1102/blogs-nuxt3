@@ -26,5 +26,5 @@ const props = defineProps({
   font-size: 18px;
   border-radius: 2px;
   height: 27px;
-  }
+}
 </style>
