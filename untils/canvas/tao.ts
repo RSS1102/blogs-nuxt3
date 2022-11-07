@@ -18,7 +18,7 @@ export const drawTao = (el: HTMLCanvasElement) => {
   const ctx = el.getContext("2d") as CanvasRenderingContext2D;
   // ！！！这里要写上全路径
   // const tao: string = VITE__URL + "/src/assets/tao1.png";
-  const tao: string = "/public/img/tao1.png";
+  const tao: string = "/img/tao1.png";
   let image: HTMLImageElement = new Image();
   image.src = tao;
   /**
